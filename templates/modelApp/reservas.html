@@ -1,0 +1,56 @@
+{% extends 'all_pages.html' %} 
+{% block titulo %} Reservas {% endblock %}
+
+{% block contenido %}
+{% if reservas %}
+<table class="table table-striped nowrap" style="width: 100%;" id="miTabla">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Teléfono</th>
+            <th>Fecha de Reserva</th>
+            <th>Hora de Reserva</th>
+            <th>Cantidad de Personas</th>
+            <th>Observación</th>
+            <th>Estado</th>
+            <th>Acción</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for reserva in reservas %}
+        <tr>
+            <td>{{ reserva.nombre }}</td>
+            <td>{{ reserva.telefono }}</td>
+            <td>{{ reserva.fecha_reserva }}</td>
+            <td>{{ reserva.hora_reserva }}</td>
+            <td>{{ reserva.cantidad_personas }}</td>
+            <td>{{ reserva.observacion }}</td>
+            <td>{{ reserva.estado.nombre }}</td>
+            <td>
+                <a href="/editarReserva/{{ reserva.id }}" class="btn btn-success">
+                  <i class="bi bi-pencil-square"></i>
+                </a>
+                {% if user.is_superuser %}
+                    <a href="/dropReserva/{{ reserva.id }}" class="btn btn-danger">
+                        <i class="bi bi-trash"></i>
+                    </a>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% else %}
+  <div class="container-fluid">
+    <div class="row justify-content-center align-items-center centrar-contenedor">
+      <div class="col-12 text-center">
+        <div class="alert alert-danger" role="alert">
+          <strong>¡Atención!</strong> No hay reservas en la Base de Datos.
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+{% endif %}
+{% endblock %}

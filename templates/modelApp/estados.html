@@ -1,0 +1,35 @@
+{% extends 'all_pages.html' %} 
+{% block titulo %} Estados {% endblock %}
+
+{% block contenido %}
+{% if productos %}
+  <table class="table table-striped nowrap" style="width: 100%;" id="miTabla">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+      </tr>    
+    </thead>
+    <tbody>
+      {% for producto in productos %}
+      <tr>
+        <td>{{ producto.id }}</td>
+        <td>{{ producto.nombre }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% else %}
+  <div class="container-fluid">
+    <div class="row justify-content-center align-items-center centrar-contenedor">
+      <div class="col-12 text-center">
+        <div class="alert alert-danger" role="alert">
+          <strong>¡Atención!</strong> No hay estados en la Base de Datos.
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+{% endif %}
+
+{% endblock %}

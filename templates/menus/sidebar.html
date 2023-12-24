@@ -1,0 +1,37 @@
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+  <ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link" href="../index.html">
+        <i class="mdi mdi-grid-large menu-icon"></i>
+        <span class="menu-title">Panel de Control</span>
+      </a>
+    </li>
+    <li class="nav-item nav-category">Páginas</li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+        <i class="menu-icon mdi mdi-floor-plan"></i>
+        <span class="menu-title">Reservas</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="auth">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="{% url 'reservas' %}">Ver Reservas</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{% url 'estados' %}">Ver Estados</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{% url 'insertReserva' %}">Agregar Reserva</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic2" aria-expanded="false" aria-controls="ui-basic2">
+        <i class="menu-icon mdi mdi-access-point"></i>
+        <span class="menu-title">API Reservas</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="ui-basic2">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="">Ver API</a></li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+</nav>
