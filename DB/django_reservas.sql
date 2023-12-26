@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-12-2023 a las 01:19:28
+-- Tiempo de generación: 26-12-2023 a las 01:25:50
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -286,6 +286,17 @@ CREATE TABLE `reservasapp_reserva` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Volcado de datos para la tabla `reservasapp_reserva`
+--
+
+INSERT INTO `reservasapp_reserva` (`id`, `nombre`, `telefono`, `fecha_reserva`, `hora_reserva`, `cantidad_personas`, `observacion`, `estado_id`) VALUES
+(10, 'Renato', '912345678', '2023-12-01', '21:00:00.000000', 1, '', 1),
+(11, 'Juancho', '098765432', '2023-12-25', '21:30:00.000000', 4, 'Cama doble', 3),
+(12, 'Hidari', '212334567', '2023-12-28', '09:30:00.000000', 6, '', 4),
+(13, 'Sofia', '654567898', '2024-01-02', '10:00:00.000000', 1, '', 1),
+(14, 'Robert', '235465678', '2023-12-31', '16:15:00.000000', 3, 'Infante de 3 años, asiste... Se pide cuna especializada.', 1);
+
+--
 -- Índices para tablas volcadas
 --
 
@@ -443,7 +454,7 @@ ALTER TABLE `reservasapp_estado`
 -- AUTO_INCREMENT de la tabla `reservasapp_reserva`
 --
 ALTER TABLE `reservasapp_reserva`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Restricciones para tablas volcadas
