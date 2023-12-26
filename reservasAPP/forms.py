@@ -3,6 +3,7 @@ from django import forms
 from django.urls import include
 from reservasAPP.models import *
 from django.core.validators import *
+
 class ReservasFormRegistration(forms.Form):
     nombre = forms.CharField(max_length=255, required=True)
     telefono = forms.CharField(max_length=9, required=True)

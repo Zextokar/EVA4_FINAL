@@ -22,6 +22,7 @@ from reservasAPP.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("accounts/", include("django.contrib.auth.urls")),
+    path("", TemplateView.as_view(template_name="home.html"), name="home"),
     path("dashboard/", Dashboard, name="dashboard"),
     path("estados/", Estados, name="estados"),
     path("reservas/", Reservas, name="reservas"),
@@ -29,4 +30,7 @@ urlpatterns = [
     path("editarReserva/<int:id>", editarReserva, name="editarReserva"),
     path("dropReserva/<int:id>", dropReserva, name="dropReserva"),
     path('api-auth/', include('rest_framework.urls')),
+    path("reservasAPI/", vistaReservaAPI, name="vistaReservaAPI"),
+    path("vistaReservaApi2/", vistaReservaApi2, name="vistaReservaApi2"),
+    path("vistaReservaApi2/<int:pk>/", user_detail_api_view, name='ReservaAPIDetailView')
 ]

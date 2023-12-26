@@ -6,7 +6,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Star Admin2 </title>
+  <title>Login</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="{% static '/vendors/feather/feather.css' %}">
   <link rel="stylesheet" href="{% static '/vendors/mdi/css/materialdesignicons.min.css' %}">
@@ -20,7 +20,7 @@
   <!-- inject:css -->
   <link rel="stylesheet" href="{% static 'css/vertical-layout-light/style.css' %}">
   <!-- endinject -->
-  <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" />
+  <link rel="icon" href="https://png.pngtree.com/png-clipart/20200727/original/pngtree-restaurant-logo-design-vector-template-png-image_5441058.jpg">
 </head>
 
 <body>
@@ -31,24 +31,24 @@
           <div class="col-lg-4 mx-auto">
             <div class="auth-form-light text-left py-5 px-4 px-sm-5">
               <div class="brand-logo">
-                <img src="../../assets/images/logo.svg" alt="logo">
+                <img src="https://png.pngtree.com/png-clipart/20200727/original/pngtree-restaurant-logo-design-vector-template-png-image_5441058.jpg" alt="logo">
               </div>
-              <h4>Hello! let's get started</h4>
-              <h6 class="fw-light">Sign in to continue.</h6>
+              <h4>Hola, vamos a empezar</h4>
+              <h6 class="fw-light">Inicia sesión para continuar.</h6>
               <form class="p-3" method="post">
                 {% csrf_token %}
                 <span class="text-danger">
                     {{ form.non_field_errors }}
                 </span>
                 <div class="form-group">
-                  <input type="text" class="form-control form-control-lg" id="{{ form.username.id_for_label }}" name="{{ form.username.name }}"placeholder="Usuario">
+                  <input type="text" class="form-control form-control-lg" id="{{ form.username.id_for_label }}" name="{{ form.username.name }}" placeholder="Usuario">
                     {% if form.username.errors %}
                     <span class="text-danger" > {{form.username.errors}}</span>
                     {% endif %}
                 </div>
                 <div class="form-group">
                   <input type="password" class="form-control form-control-lg"
-                    id="{{form.password.id_for_label}}" name="{{form.password.name}}" placeholder="Password">
+                    id="{{form.password.id_for_label}}" name="{{form.password.name}}" placeholder="Contraseña">
                     {% if form.password.errors %}
                     <span class="text-danger" > {{form.password.errors}}</span>
                     {% endif %}

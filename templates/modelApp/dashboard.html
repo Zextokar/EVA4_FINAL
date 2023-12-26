@@ -12,4 +12,24 @@
 </div>
 {% endblock %}
 {% block contenido %}
+<div class="row m-3">
+  <div class="col-6">
+    <div class="card">
+      <img src="https://assets-global.website-files.com/575ef60509a5a7a9116d9f8c/5deee843387895699a77f176_reservas.jpg" class="card-img-top img-fluid" alt="..." style="max-height: 37vh;">
+      <div class="card-body">
+        <h5 class="card-title">VER RESERVAS</h5>
+        <a href="{% url 'reservas' %}" class="btn btn-primary">IR</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="card">
+      <img src="https://ar-media.hptiendaenlinea.com/magefan_blog/Qu_es_una_API_y_c_mo_funciona.png" class="card-img-top img-fluid" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">API</h5>
+        <a href="{% url 'vistaReservaApi2' %}" class="btn btn-primary">IR</a>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
