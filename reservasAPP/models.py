@@ -15,4 +15,4 @@ class Reserva(models.Model):
     hora_reserva = models.TimeField()
     cantidad_personas = models.IntegerField()
     estado = models.ForeignKey(Estado, on_delete=models.CASCADE)
-    observacion = models.TextField(blank=True)
+    observacion = models.CharField(max_length=255, blank=True)

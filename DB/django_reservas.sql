@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-12-2023 a las 01:25:50
+-- Tiempo de generación: 27-12-2023 a las 01:33:50
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -225,7 +225,8 @@ INSERT INTO `django_migrations` (`id`, `app`, `name`, `applied`) VALUES
 (16, 'auth', '0011_update_proxy_permissions', '2023-12-24 19:56:11.157456'),
 (17, 'auth', '0012_alter_user_first_name_max_length', '2023-12-24 19:56:11.177842'),
 (18, 'sessions', '0001_initial', '2023-12-24 19:56:11.224227'),
-(19, 'reservasAPP', '0001_initial', '2023-12-24 19:56:49.272286');
+(19, 'reservasAPP', '0001_initial', '2023-12-24 19:56:49.272286'),
+(20, 'reservasAPP', '0002_alter_reserva_observacion', '2023-12-27 00:26:52.489566');
 
 -- --------------------------------------------------------
 
@@ -281,7 +282,7 @@ CREATE TABLE `reservasapp_reserva` (
   `fecha_reserva` date NOT NULL,
   `hora_reserva` time(6) NOT NULL,
   `cantidad_personas` int(11) NOT NULL,
-  `observacion` longtext NOT NULL,
+  `observacion` varchar(255) NOT NULL,
   `estado_id` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -290,11 +291,13 @@ CREATE TABLE `reservasapp_reserva` (
 --
 
 INSERT INTO `reservasapp_reserva` (`id`, `nombre`, `telefono`, `fecha_reserva`, `hora_reserva`, `cantidad_personas`, `observacion`, `estado_id`) VALUES
-(10, 'Renato', '912345678', '2023-12-01', '21:00:00.000000', 1, '', 1),
-(11, 'Juancho', '098765432', '2023-12-25', '21:30:00.000000', 4, 'Cama doble', 3),
+(10, 'Renato', '912345678', '2023-12-01', '21:00:00.000000', 1, 'Sin mariscos', 1),
+(11, 'Juancho', '098765432', '2023-12-26', '21:30:00.000000', 4, 'Sin pan', 3),
 (12, 'Hidari', '212334567', '2023-12-28', '09:30:00.000000', 6, '', 4),
 (13, 'Sofia', '654567898', '2024-01-02', '10:00:00.000000', 1, '', 1),
-(14, 'Robert', '235465678', '2023-12-31', '16:15:00.000000', 3, 'Infante de 3 años, asiste... Se pide cuna especializada.', 1);
+(14, 'Robert', '235465678', '2023-12-26', '16:15:00.000000', 3, 'Infante de 3 años, asiste...', 1),
+(15, 'Hector', '789456123', '2027-01-26', '05:30:00.000000', 3, 'Sin pan', 1),
+(16, 'Hector', '789456123', '2027-01-26', '05:20:00.000000', 3, 'Sin pan', 1);
 
 --
 -- Índices para tablas volcadas
@@ -442,7 +445,7 @@ ALTER TABLE `django_content_type`
 -- AUTO_INCREMENT de la tabla `django_migrations`
 --
 ALTER TABLE `django_migrations`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de la tabla `reservasapp_estado`
@@ -454,7 +457,7 @@ ALTER TABLE `reservasapp_estado`
 -- AUTO_INCREMENT de la tabla `reservasapp_reserva`
 --
 ALTER TABLE `reservasapp_reserva`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- Restricciones para tablas volcadas
